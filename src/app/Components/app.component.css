@@ -1,0 +1,20 @@
+#main-div{
+}
+
+#title-div{
+    width: 100%;
+    min-height : 40px;
+    max-height: 40px;
+    margin-top: -10px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+#app-title{
+    font-family: "Courier New", Monospace;
+    text-align: center;
+    color: white;
+    font-size: xx-large;
+    margin-top: 2px;
+}

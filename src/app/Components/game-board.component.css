@@ -1,0 +1,226 @@
+#game-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+.wrapper-div{
+    margin-top:20px;
+}
+
+#settings-panel{
+    background-color:rgba(255, 255, 255, 0.25);  
+    padding: 20px;
+    max-height: max-content;
+    flex: 0 4 300px;
+    margin-top: 10%;
+    margin-left: 50px;
+    position: relative;
+}
+
+#action-panel{
+    background-color:rgba(255, 255, 255, 0.25);  
+    padding: 20px;
+    max-height: 200px;
+    flex: 0 4 300px;
+    margin-top: 10%;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-grid-socket{
+    flex: 5 0 ;
+}
+
+.wrapper-div{
+    position: relative;
+}
+.info {
+    position: absolute;
+    top:-100px;
+    left: 50px;
+}
+
+.button {
+    -webkit-transition-duration: 0.6s; /* Safari */
+    transition-duration: 0.6s;
+    background-color:rgba(255, 255, 255, 0.486); 
+    width: 150px;
+    height: 60px;
+    border: 1.5px solid black !important;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    
+}
+
+.button:hover{
+    background-color: rgb(231, 231, 231);
+}
+
+.settings-label{
+        font-family: "Courier New", Monospace;
+        text-align: center;
+        color: rgb(231, 231, 231);
+        font-weight: bolder;
+        font-size: large;
+        margin-top: 2px;
+}
+
+.setting-container{
+    margin-top:20px;
+    margin-bottom:40px;
+
+}
+
+.container-big{
+    margin-bottom:60px !important;
+}
+
+.slidecontainer {
+    width: 100%; 
+}
+
+.checkbox-custom{
+    -webkit-appearance: none; 
+    opacity: 1;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px;
+    cursor: pointer;
+    content: '';
+    background: rgba(255, 255, 255, 0.486);
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    
+    margin-right: 10px;
+    text-align: center;
+
+}
+
+.checkbox-custom:checked{
+    background: rgb(78, 133, 236); 
+    box-shadow: inset 0px 0px 0px 4px #fff;
+}
+.checkbox-custom:hover{
+    transform: scale(1.2);
+}
+
+
+
+.slider {
+    direction: rtl;
+    -webkit-appearance: none; 
+    width: 100%; 
+    height: 20px; 
+    background: rgba(255, 255, 255, 0.486);
+    outline: none; 
+    opacity: 0.7; 
+    -webkit-transition: .2s; 
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;  
+    appearance: none;
+    width: 25px;  
+    height: 25px;  
+    background: rgb(78, 133, 236); 
+    cursor: pointer; 
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;  
+    height: 25px; 
+    background: rgb(78, 133, 236);  
+    cursor: pointer; 
+}
+.slider::-webkit-slider-thumb:hover{
+    zoom: 1.15;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+}
+
+.slider::-moz-range-thumb:hover{
+    zoom: 1.15;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+}
+
+#dropdown-container{
+    display:flex;
+    flex-direction: row;
+}
+
+#dropbtn-left, #dropbtn-right  {
+    border: none;
+    
+}
+
+#dropdown-content-left {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.486);
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+    z-index: 1;
+    left: 15;
+}
+#dropdown-content-right{
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.486);
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+    z-index: 1;
+    right: 15;
+}
+
+
+.menu-button{
+    background-color:rgba(255, 255, 255, 0.286); 
+    color: black;
+    padding: 12px 0px;
+    width:100%;
+    border:none;
+    border-bottom: solid, 1px, black !important;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#drops{
+    position: absolute;
+    left:0;
+}
+
+.menu-button:hover{
+    background-color: white;
+}
+
+
+#drops-left:hover #dropdown-content-left  {
+    display: block;
+}
+
+#drops-right:hover #dropdown-content-right  {
+    display: block;
+}
+
+
+.dropdown:hover #dropbtn-left #dropbtn-right {
+    background-color: rgb(231, 231, 231);
+}

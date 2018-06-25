@@ -1,0 +1,64 @@
+<!-- Contenitore di tutte le strutture principali della schermata di gioco -->
+
+
+<div id="game-wrapper" class="flex-container">
+    <!-- pannello di sinistra con le varie impostazioni -->
+    <div id="settings-panel" class="wrapper-div slidecontainer">
+        <div id="framerate-info" class="info settings-label">
+            <p> Generations per second: {{gameController.generationsPerSecond}}</p>
+        </div>
+        <div class="setting-container container-big">
+            <p class="settings-label"> Generation speed: </p>
+            <input type="range" min="100" max="1000" value="gameController.intervalTime" class="slider" (change)="gameController.changeSpeed($event.target.value)">
+ 
+        </div>
+
+        <div class="setting-container">
+            <p class="settings-label">
+                Show cell's aging
+                <input class="checkbox-custom" type="checkbox" value="true" (change)="setShowingAge($event.target.checked)">
+                <br>
+            </p>
+        </div>
+        <div id="dropdown-container">
+            <div id="drops-left" class="setting-container dropdown">
+                <button id="dropbtn-left" class="button" >Grid Size</button>
+                <div id="dropdown-content-left">
+                    <button class="menu-button" (click)="gameGrid.changeGridDimension(32); ">Small (32x32)</button>
+                    <button class="menu-button" (click)="gameGrid.changeGridDimension(40);">Medium (40x40)</button>
+                    <button class="menu-button" (click)="gameGrid.changeGridDimension(64);">Large (64x64)</button>
+                    <button class="menu-button" (click)="gameGrid.changeGridDimension(80);">Larger (80x80)</button>
+                </div>
+            </div>
+            <div id="drops-right" class="setting-container dropdown">
+                <button id="dropbtn-right" class=" button">Presets</button>
+                <div id="dropdown-content-right">
+                    <button class="menu-button" (click)="gameController.stopGame(); gameGrid.preset('die hard 1')">DieHard 1</button>
+                    <button class="menu-button" (click)="gameController.stopGame(); gameGrid.preset('endless growth')">Endless growth</button>
+                    <button class="menu-button" (click)="gameController.stopGame(); gameGrid.preset('gosper cannon')">Gosper's cannon</button>
+                    <button class="menu-button" (click)="gameController.stopGame(); gameGrid.preset('rly cool')">quite cool maybe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- fine pannello di sinistra -->
+
+    <!-- contenitore della griglia di gioco  -->
+    <div id='game-grid-socket' class="wrapper-div">
+        <app-game-grid></app-game-grid>
+    </div>
+
+    <!-- pannello di destra con i tasti di azione e la label del numero di generazione  -->
+    <div id="action-panel" class="wrapper-div">
+        <div id="generation-info" class="info settings-label">
+            <p> Generation Number: {{gameController.generation}}</p>
+        </div>
+        <button type="button" class="button" id="start-game" *ngIf="gameController.isRunning()==false" (click)="startGame();"
+            [disabled]="isStartClicked"> Start </button>
+        <button type="button" class="button" id="pause-game" *ngIf="gameController.isRunning()==true" (click)="pauseGame();">
+            Pause </button>
+        <button type="button" class="button" id="stop-game" (click)="stopGame();"> Stop </button>
+        <button type="button" class="button" id="reset-game" (click)="gameController.resetGame();"> Clear </button>
+    </div>
+
+</div>

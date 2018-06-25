@@ -1,0 +1,16 @@
+#game-grid-div{
+    display: inline-block;
+    border: 4px solid black;
+}
+
+.board-cell{
+    
+    border-width: 1px!important;
+    display: grid;
+    display: -ms-grid;
+    float: left;
+   /*  background-color: rgb(245, 123, 75); */
+
+}
+
+
