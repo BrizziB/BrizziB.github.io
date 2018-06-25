@@ -1,1 +1,0 @@
-# Angular4_GameOfLife
